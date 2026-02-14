@@ -1,178 +1,196 @@
-<!DOCTYPE html> <!-- HTML5 doctype -->
-<html lang="en" dir="ltr"> <!-- Page language defaults to English; direction LTR -->
-<head> <!-- Head start --> 
-  <meta charset="UTF-8"> <!-- Character encoding -->
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Responsive viewport for phones & laptops -->
-  <title>Ahmed Sameh — Portfolio</title> <!-- Title shown in browser tab -->
-  <link rel="stylesheet" href="styles.css"> <!-- External stylesheet link -->
-</head> <!-- Head end -->
-
-<body> <!-- Body start -->
-
-<!--top banner motto and linkedin-->
- <div class="top-banner glass" role="banner" aria-label="Personal motto and LinkedIn">
-  <span class="motto">(with every heartbeat, proudly Egyptian)</span>
-  <a class="linkedin-link"
-     href="https://www.linkedin.com/in/ahmed-sameh-9b2632331"
-     target="_blank" rel xmlns="http://www.w3.org/2000/svg"
-         width="22" height="22" viewBox="0 0 24 24"
-         fill="currentColor" aria-hidden="true">
-      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11.75 20h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.25 11.268h-3v-5.604c0-1.336-.026-3.055-1.862-3.055-1.865 0-2.151 1.455-2.151 2.958v5.701h-3v-10h2.881v1.367h.041c.401-.76 1.379-1.562 2.838-1.562 3.037 0 3.6 2.001 3.6 4.601v5.594z"/>
-    </svg>
-  </a>
- </div>
-
-
-  <!-- ================= HEADER ================= -->
-  <header class="site-header glass"> <!-- Sticky header with liquid glass effect -->
-    <div class="brand"> <!-- Brand wrapper -->
-      <a href="#home" class="logo" aria-label="Go to Home"> <!-- Home anchor -->
-        <span data-i18n="brand.name">Ahmed Sameh</span> <!-- Brand text (translated key) -->
-
-      </a> <!-- End logo -->
-    </div> <!-- End brand -->
-
-    <nav class="nav" aria-label="Primary"> <!-- Main navigation -->
-      <ul class="nav-list"> <!-- Nav list wrapper -->
-        <li><a class="nav-link" href="#home" data-i18n="nav.home">Home</a></li> <!-- Home link -->
-        <li><a class="nav-link" href="#about" data-i18n="nav.about">About</a></li> <!-- About link -->
-        <li><a class="nav-link" href="#education" data-i18n="nav.education">Education</a></li> <!-- Education link -->
-        <li><a class="nav-link" href="#skills" data-i18n="nav.skills">Skills</a></li> <!-- Skills link -->
-        <li><a class="nav-link" href="#projects" data-i18n="nav.projects">Projects</a></li> <!-- Projects link -->
-        <li><a class="nav-link" href="#certs" data-i18n="nav.certs">Certifications</a></li> <!-- Certifications link -->
-        <li><a class="nav-link" href="#courses" data-i18n="nav.courses">Courses</a></li> <!-- Courses link -->
-        <li><a class="nav-link" href="#languages" data-i18n="nav.languages">Languages</a></li> <!-- Languages link -->
-        <li><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li> <!-- Contact link -->
-      </ul> <!-- End nav list -->
-
-      <div class="toggles"> <!-- Controls: theme + language -->
-        <button id="themeToggle" class="toggle" aria-label="Toggle dark/light"> <!-- Theme toggle button -->
-          <span class="icon" aria-hidden="true">🌙</span> <!-- Icon (updates in JS) -->
-        </button> <!-- End theme toggle -->
-        <button id="langToggle" class="toggle" aria-label="Toggle language"> <!-- Language toggle button -->
-          <span class="icon" aria-hidden="true">🌐</span> <!-- Icon -->
-          <span id="langLabel" data-i18n="lang.label">AR</span> <!-- Label showing next language -->
-        </button> <!-- End language toggle -->
-      </div> <!-- End toggles -->
-    </nav> <!-- End nav -->
-  </header> <!-- End header -->
-  <!-- ================= HERO ================= -->
-  <section id="home" class="section hero glass" aria-label="Home"> <!-- Hero section -->
-    <div class="hero-content"> <!-- Hero container -->
-      <div class="hero-photo"> <!-- Photo wrapper -->
-        <!-- PLACE YOUR PROFILE PHOTO HERE --> <!-- Upload space comment -->
-        <!-- Save as: assets/img/profile.jpg (square ~600x600) --> <!-- Path & size guidance -->
-        <img src="profile.jpeg" alt="portrait of Ahmed Sameh" loading="lazy"> <!-- Profile image element -->
-      </div> <!-- End photo -->
-
-      <div class="hero-text"> <!-- Text wrapper --> 
-        <h1 class="hero-title" data-i18n="hero.title">Ahmed Sameh Abdelgelil</h1> <!-- Name heading (i18n keeps same string) -->
-        <p class="hero-subtitle" data-i18n="hero.subtitle">Computer Science Student @ AAST · Cybersecurity enthusiast · C, Java, Python & Web</p> <!-- Tagline -->
-        <div class="cta"> <!-- Calls to action -->
-          <a href="#contact" class="btn primary" data-i18n="hero.contact_button">Contact Me</a> <!-- Contact button -->
-          <a href="Ahmed_Sameh_CV.docx" class="btn ghost" download data-i18n="hero.cv_button"> CV (PDF)</a> <!-- CV Download -->
-       </div> <!-- End CTA --> 
-      </div> <!-- End text -->
-    </div> <!-- End hero content -->
-  </section> <!-- End hero -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ahmed Sameh — Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
   
-  <!-- ================= ABOUT ================= -->
-  <section id="about" class="section glass" aria-label="About"> <!-- About section -->
-    <h2 class="section-title" data-i18n="about.title">About Me</h2> <!-- Title -->
-    <p class="section-lead" data-i18n="about.lead">Motivated computer science student with a strong interest in <strong>cybersecurity</strong> and programming. Proven success in competitive environments with strong teamwork and problem-solving abilities. Eager to gain practical experience and contribute to innovative tech solutions.</p> <!-- Summary -->
-  </section> <!-- End about -->
+  <body>
+    <div class="top-banner glass" role="banner" aria-label="Personal motto and LinkedIn">
+      <span class="motto" data-i18n="motto.text">with every heartbeat, proudly Egyptian</span>
+      <a
+        class="linkedin-link"
+        href="https://www.linkedin.com/in/ahmed-sameh-9b2632331"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+      >
+        <svg
+          class="linkedin-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM7.25 20h-3V10h3v10zM5.75 8.732c-.966 0-1.75-.79-1.75-1.764S4.784 5.204 5.75 5.204s1.75.79 1.75 1.764-.784 1.764-1.75 1.764zM19 20h-3v-5.604c0-1.336-.026-3.055-1.862-3.055-1.865 0-2.151 1.455-2.151 2.958V20h-3V10h2.881v1.367h.041c.401-.76 1.379-1.562 2.838-1.562 3.037 0 3.6 2.001 3.6 4.601V20z"
+          />
+        </svg>
+        <span class="sr-only">LinkedIn</span>
+      </a>
+    </div>
 
-  <!-- ================= EDUCATION ================= -->
-  <section id="education" class="section glass" aria-label="Education"> <!-- Education section -->
-    <h2 class="section-title" data-i18n="education.title">Education</h2> <!-- Title -->
-    <article class="edu-item"> <!-- Single item -->
-      <h3 class="edu-degree" data-i18n="education.degree">Arab Academy for Science and Technology (AAST) — BSc Computer Science</h3> <!-- Degree -->
-      <p class="edu-meta" data-i18n="education.meta">Expected Graduation: 2029</p> <!-- Meta -->
-    </article> <!-- End item -->
-  </section> <!-- End education -->
+    <header class="site-header glass">
+      <div class="brand">
+        <a href="#home" class="logo" aria-label="Go to Home">
+          <span data-i18n="brand.name">Ahmed Sameh</span>
+        </a>
+      </div>
 
-  <!-- ================= SKILLS ================= -->
-  <section id="skills" class="section glass" aria-label="Skills"> <!-- Skills section -->
-    <h2 class="section-title" data-i18n="skills.title">Skills</h2> <!-- Title -->
-    <ul class="skills-list"> <!-- List wrapper -->
-      <li data-i18n="skills.c">C </li> <!-- Skill -->
-      <li data-i18n="skills.java">Java</li> <!-- Skill -->
-      <li data-i18n="skills.python">Python</li> <!-- Skill -->
-      <li data-i18n="skills.html">HTML</li> <!-- Skill -->
-      <li data-i18n="skills.css">CSS</li> <!-- Skill -->
-      <li data-i18n="skills.js">JavaScript</li> <!-- Skill -->
-      <li data-i18n="skills.cyber">Cybersecurity Fundamentals</li> <!-- Skill -->
-      <li data-i18n="skills.team">Team Collaboration</li> <!-- Skill -->
-      <li data-i18n="skills.problem">Problem Solving</li> <!-- Skill -->
-      <li data-i18n="skills.analysis">Data Analysis</li> <!-- Skill -->
-    </ul> <!-- End list -->
-    <p class="muted" data-i18n="skills.interest">Interested in <strong>Cybersecurity</strong> and modern <strong>Web Development</strong>.</p> <!-- Interests line -->
-  </section> <!-- End skills -->
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#home" data-i18n="nav.home">Home</a></li>
+          <li><a class="nav-link" href="#about" data-i18n="nav.about">About</a></li>
+          <li><a class="nav-link" href="#education" data-i18n="nav.education">Education</a></li>
+          <li><a class="nav-link" href="#skills" data-i18n="nav.skills">Skills</a></li>
+          <li><a class="nav-link" href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a class="nav-link" href="#certs" data-i18n="nav.certs">Certifications</a></li>
+          <li><a class="nav-link" href="#courses" data-i18n="nav.courses">Courses</a></li>
+          <li><a class="nav-link" href="#languages" data-i18n="nav.languages">Languages</a></li>
+          <li><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
 
-  <!-- ================= PROJECTS ================= -->
-  <section id="projects" class="section glass" aria-label="Projects"> <!-- Projects section -->
-    <h2 class="section-title" data-i18n="projects.title">Projects & Achievements</h2> <!-- Title -->
-    <div class="cards"> <!-- Cards grid -->
-      <article class="card"> <!-- Card wrapper -->
-        <!-- PLACE YOUR PROJECT IMAGE HERE --> <!-- Upload space comment -->
-        <!-- Save as: assets/img/project-ip-protocol.jpg --> <!-- Path guidance -->
-        <img class="card-img" src="CTF competion AAST .jpg" alt="IP Protocol Cybersecurity Challenge" loading="lazy"> <!-- Project image -->
-        <div class="card-body"> <!-- Card text -->
-          <h3 class="card-title" data-i18n="projects.card1.title">Winner CTF by IP Protocol Cybersecurity Challenge</h3> <!-- Project title -->
-          <p class="card-text" data-i18n="projects.card1.text">Ranked 1st place in a national cybersecurity competition focused on IP protocols.</p> <!-- Project description -->
-        </div> <!-- End body -->
-      </article> <!-- End card -->
-    </div> <!-- End cards -->
-  </section> <!-- End projects -->
+        <div class="toggles">
+          <button id="themeToggle" class="toggle" aria-label="Toggle dark/light">
+            <span class="icon" aria-hidden="true">🌙</span>
+          </button>
+          <button id="langToggle" class="toggle" aria-label="Toggle language">
+            <span class="icon" aria-hidden="true">🌐</span>
+            <span id="langLabel" data-i18n="lang.label">AR</span>
+          </button>
+        </div>
+      </nav>
+    </header>
 
-  <!-- ================= CERTIFICATIONS ================= -->
-  <section id="certs" class="section glass" aria-label="Certifications"> <!-- Certifications section -->
-    <h2 class="section-title" data-i18n="certs.title">Certifications</h2> <!-- Title -->
-    <ul class="cert-list"> <!-- List -->
-      <li data-i18n="certs.cyber">Cybersecurity — EncryptCore</li> <!-- Certificate -->
-      <li data-i18n="certs.web">Web Development — EncryptCore</li> <!-- Certificate -->
-    </ul> <!-- End list -->
-  </section> <!-- End certifications -->
+    <section id="home" class="section hero glass" aria-label="Home">
+      <div class="hero-content">
+        <div class="hero-photo">
+          <img src="profile.jpeg" alt="portrait of Ahmed Sameh" loading="lazy" />
+        </div>
+        <div class="hero-text">
+          <h1 class="hero-title" data-i18n="hero.title">Ahmed Sameh Abdelgelil</h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+           Computer Science Student @ AAST · Cybersecurity enthusiast. </p>
+          <div class="cta">
+            <a href="#contact" class="btn primary" data-i18n="hero.contact_button">Contact Me</a>
+            <a href="Ahmed_Sameh_CV.docx" class="btn ghost" download data-i18n="hero.cv_button">Download CV (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- ================= COURSES ================= -->
-  <section id="courses" class="section glass" aria-label="Courses"> <!-- Courses section -->
-    <h2 class="section-title" data-i18n="courses.title">Courses</h2> <!-- Title -->
-    <ul class="cert-list"> <!-- Reuse styles -->
-      <li data-i18n="courses.webdev">Web Development</li> <!-- Course -->
-      <li data-i18n="courses.cybersec">Cybersecurity</li> <!-- Course -->
-      <li data-i18n="courses.datasci">Data Analysis</li> <!-- Course -->
-    </ul> <!-- End list -->
-  </section> <!-- End courses -->
+    <section id="about" class="section glass" aria-label="About">
+      <h2 class="section-title" data-i18n="about.title">About Me</h2>
+      <p class="section-lead" data-i18n="about.lead">
+        Motivated computer science student with a strong interest in <strong>cybersecurity</strong> and programming. Proven success in competitive environments with strong teamwork and problem-solving abilities. Eager to gain practical experience and contribute to innovative tech solutions.
+      </p>
+    </section>
 
-  <!-- ================= LANGUAGES ================= -->
-  <section id="languages" class="section glass" aria-label="Languages"> <!-- Languages section -->
-    <h2 class="section-title" data-i18n="languages.title">Languages</h2> <!-- Title -->
-    <ul class="lang-list"> <!-- List -->
-      <li data-i18n="languages.ar">Arabic (Native)</li> <!-- Language -->
-      <li data-i18n="languages.en">English (B2 Level – Intermediate Upper)</li> <!-- Language --> 
-    </ul> <!-- End list -->
-  </section> <!-- End languages -->
+    <section id="education" class="section glass" aria-label="Education">
+      <h2 class="section-title" data-i18n="education.title">Education</h2>
+      <article class="edu-item">
+        <h3 class="edu-degree" data-i18n="education.degree">Arab Academy for Science and Technology (AAST) — BSc Computer Science</h3>
+        <p class="edu-meta" data-i18n="education.meta">Expected Graduation: 2029</p>
+      </article>
+    </section>
 
-  <!-- ================= CONTACT ================= -->
-  <section id="contact" class="section glass" aria-label="Contact"> <!-- Contact section -->
-    <h2 class="section-title" data-i18n="contact.title">Contact</h2> <!-- Title -->
-    <div class="contact-grid"> <!-- Grid wrapper -->
-      <a class="contact-item" href="tel:+201068773080"><span aria-hidden="true">📞</span> <span data-i18n="contact.phone">01068773080</span></a> <!-- Phone link -->
-      <a class="contact-item" href="mailto:ahmedsameh9034@gmail.com"><span aria-hidden="true">✉️</span> <span data-i18n="contact.email">ahmedsameh9034@gmail.com</span></a> <!-- Email link -->
-      <span class="contact-item"><span aria-hidden="true">📍</span> <span data-i18n="contact.location">Arab Academy for Science and Technology (AAST)</span></span> <!-- Location -->
-    </div> <!-- End grid -->
-  </section> <!-- End contact -->
+    <section id="skills" class="section glass" aria-label="Skills">
+      <h2 class="section-title" data-i18n="skills.title">Skills</h2>
+      <ul class="skills-list">
+        <li data-i18n="skills.c">C</li>
+        <li data-i18n="skills.java">Java</li>
+        <li data-i18n="skills.python">Python</li>
+        <li data-i18n="skills.html">HTML</li>
+        <li data-i18n="skills.css">CSS</li>
+        <li data-i18n="skills.js">JavaScript</li>
+        <li data-i18n="skills.cyber">Cybersecurity Fundamentals</li>
+        <li data-i18n="skills.team">Team Collaboration</li>
+        <li data-i18n="skills.problem">Problem Solving</li>
+        <li data-i18n="skills.analysis">Data Analysis</li>
+      </ul>
+      <p class="muted" data-i18n="skills.interest">
+        Interested in <strong>Cybersecurity</strong> and modern <strong>Web Development</strong>.
+      </p>
+    </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer"> <!-- Footer wrapper -->
-    <p id="rights" data-i18n="footer.rights">© <span id="year"></span> Ahmed Sameh. All rights reserved.</p> <!-- Copyright line -->
-  </footer> <!-- End footer -->
+    <section id="projects" class="section glass" aria-label="Projects">
+      <h2 class="section-title" data-i18n="projects.title">Projects & Achievements</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title" data-i18n="projects.card1.title">Winner — IP Protocol Cybersecurity Challenge</h3>
+            <p class="card-text" data-i18n="projects.card1.text">
+              Ranked 1st place in a national cybersecurity competition focused on IP protocols.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
 
+    <section id="certs" class="section glass" aria-label="Certifications">
+      <h2 class="section-title" data-i18n="certs.title">Certifications</h2>
+      <ul class="cert-list">
+        <li data-i18n="certs.cyber">Cybersecurity — EncryptCore</li>
+        <li data-i18n="certs.web">Web Development — EncryptCore</li>
+      </ul>
 
-  <script src="app.js"></script> <!-- App logic: theme + i18n + footer year -->
-</body> <!-- Body end -->
+      <div class="cert-gallery">
+        <figure class="cert-card">
+          <img
+            src="CTF competion AAST .jpg"
+            alt="Capture the Flag Competition certificate — First Place"
+            loading="lazy"
+          />
+          <figcaption class="cert-caption">Capture the Flag Competition — First Place</figcaption>
+        </figure>
+      </div>
+    </section>
 
+    <section id="courses" class="section glass" aria-label="Courses">
+      <h2 class="section-title" data-i18n="courses.title">Courses</h2>
+      <ul class="cert-list">
+        <li data-i18n="courses.webdev">Web Development</li>
+        <li data-i18n="courses.cybersec">Cybersecurity</li>
+        <li data-i18n="courses.datasci">Data Analysis</li>
+      </ul>
+    </section>
 
-</html> <!-- HTML end -->
+    <section id="languages" class="section glass" aria-label="Languages">
+      <h2 class="section-title" data-i18n="languages.title">Languages</h2>
+      <ul class="lang-list">
+        <li data-i18n="languages.ar">Arabic (Native)</li>
+        <li data-i18n="languages.en">English (B2 Level – Intermediate Upper)</li>
+      </ul>
+    </section>
 
+    <section id="contact" class="section glass" aria-label="Contact">
+      <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+      <div class="contact-grid">
+        <a class="contact-item" href="tel:+201068773080">
+          <span aria-hidden="true">📞</span>
+          <span data-i18n="contact.phone">01068773080</span>
+        </a>
+        <a class="contact-item" href="mailto:ahmedsameh9034@gmail.com">
+          <span aria-hidden="true">✉️</span>
+          <span data-i18n="contact.email">ahmedsameh9034@gmail.com</span>
+        </a>
+        <span class="contact-item">
+          <span aria-hidden="true">📍</span>
+          <span data-i18n="contact.location">Arab Academy for Science and Technology (AAST)</span>
+        </span>
+      </div>
+    </section>
 
+    <footer class="site-footer">
+      <p id="rights" data-i18n="footer.rights">
+        © <span id="year"></span> <p> built by Ahmed Sameh.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
