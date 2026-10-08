@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ahmed Sameh — Portfolio</title>
+    <!-- 🛡️ CTF Challenge Easter Egg: Curious developer? Open the terminal and type 'cat flag.txt' or 'submit_flag FLAG{4hm3d_c5_ctf_ch4mp}'! -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Reading Progress Bar -->
+    <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Confetti Canvas for CTF Easter Egg -->
+    <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+    <div class="top-banner glass" role="banner" aria-label="Personal motto and LinkedIn">
+      <span class="motto" data-i18n="motto.text">with every heartbeat, proudly Egyptian</span>
+      <a
+        class="linkedin-link"
+        href="https://www.linkedin.com/in/ahmed-sameh-9b2632331"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+      >
+        <svg
+          class="linkedin-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM7.25 20h-3V10h3v10zM5.75 8.732c-.966 0-1.75-.79-1.75-1.764S4.784 5.204 5.75 5.204s1.75.79 1.75 1.764-.784 1.764-1.75 1.764zM19 20h-3v-5.604c0-1.336-.026-3.055-1.862-3.055-1.865 0-2.151 1.455-2.151 2.958V20h-3V10h2.881v1.367h.041c.401-.76 1.379-1.562 2.838-1.562 3.037 0 3.6 2.001 3.6 4.601V20z"
+          />
+        </svg>
+        <span class="sr-only">LinkedIn</span>
+      </a>
+    </div>
+
+    <header class="site-header glass">
+      <div class="brand">
+        <a href="#home" class="logo" aria-label="Go to Home" data-i18n="brand.name">Ahmed Sameh</a>
+      </div>
+
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <nav class="nav" id="siteNav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#home" data-i18n="nav.home">Home</a></li>
+          <li><a class="nav-link" href="#about" data-i18n="nav.about">About</a></li>
+          <li><a class="nav-link" href="#education" data-i18n="nav.education">Education</a></li>
+          <li><a class="nav-link" href="#skills" data-i18n="nav.skills">Skills</a></li>
+          <li><a class="nav-link" href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a class="nav-link" href="#certs" data-i18n="nav.certs">Certifications</a></li>
+          <li><a class="nav-link" href="#courses" data-i18n="nav.courses">Courses</a></li>
+          <li><a class="nav-link" href="#languages" data-i18n="nav.languages">Languages</a></li>
+          <li><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+
+        <div class="toggles">
+          <button id="terminalToggleBtn" class="toggle terminal-btn" aria-label="Open Interactive Terminal" title="Open Cyber Shell">
+            <span class="icon" aria-hidden="true">&gt;_</span>
+            <span class="toggle-label" data-i18n="terminal.btnLabel">Shell</span>
+          </button>
+          <button id="themeToggle" class="toggle" aria-label="Toggle dark/light">
+            <span class="icon" aria-hidden="true">🌙</span>
+          </button>
+          <button id="langToggle" class="toggle" aria-label="Toggle language">
+            <span class="icon" aria-hidden="true">🌐</span>
+            <span id="langLabel" data-i18n="lang.label">AR</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section with Interactive Particle Canvas -->
+    <section id="home" class="section hero glass" aria-label="Home">
+      <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-content">
+        <div class="hero-photo">
+          <img src="profile.jpeg" alt="portrait of Ahmed Sameh" loading="lazy" />
+        </div>
+        <div class="hero-text">
+          <h1 class="hero-title" data-i18n="hero.title">Ahmed Sameh AbdelGelil</h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            Computer Science @ AAST · AI & Robotics | cyber security | Web Development
+          </p>
+          <div class="cta">
+            <a href="#contact" class="btn primary" data-i18n="hero.contact_button">Contact Me</a>
+            <a href="Ahmed_Sameh_CV.docx" class="btn ghost" download data-i18n="hero.cv_button">Download CV (PDF)</a>
+            <button id="heroTerminalBtn" class="btn terminal-cta" data-i18n="hero.shell_button">&gt;_ Launch Terminal</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Stats & Highlights Counter -->
+    <section class="section stats-section glass" aria-label="Key Highlights">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">1st</span>
+          <span class="stat-label" data-i18n="stats.ctf">Place — IP Protocol Security Challenge</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">2+</span>
+          <span class="stat-label" data-i18n="stats.internships">Hands-on Industry Internships</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">4+</span>
+          <span class="stat-label" data-i18n="stats.certs">AI & Cybersecurity Certifications</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">2028</span>
+          <span class="stat-label" data-i18n="stats.grad">BSc Computer Science Candidate</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section glass" aria-label="About">
+      <h2 class="section-title" data-i18n="about.title">About Me</h2>
+      <p class="section-lead" data-i18n="about.lead">
+        Motivated 20-year-old CS student at AAST, passionate about <strong>AI</strong>, <strong>Robotics</strong>, <strong>Cyber Security</strong> and <strong>Web Development</strong>. 1st place winner in an IP Protocol Cyber Security competition. Experienced with real-world internships, backend API development in C#, and certified AI training, with a strong drive to leverage AI in modern solutions.
+      </p>
+    </section>
+
+    <!-- Education Timeline -->
+    <section id="education" class="section glass" aria-label="Education">
+      <h2 class="section-title" data-i18n="education.title">Education Journey</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date" data-i18n="education.meta">Expected Graduation: 2028</span>
+            <h3 class="timeline-title" data-i18n="education.degree">Arab Academy for Science and Technology (AAST – Smart Village)</h3>
+            <p class="timeline-sub" data-i18n="education.degree_sub">Bachelor of Science in Computer Science</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date" data-i18n="education.hs_date">Graduated: 2024</span>
+            <h3 class="timeline-title" data-i18n="education.highschool">Manor House School (MHS)</h3>
+            <p class="timeline-sub" data-i18n="education.hs_sub">American High School Diploma</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categorized Skills with Proficiency Bars -->
+    <section id="skills" class="section glass" aria-label="Skills">
+      <h2 class="section-title" data-i18n="skills.title">Skills & Domain Proficiency</h2>
+
+      <div class="skills-categories-grid">
+        <!-- Category 1: Cyber Security & Networking -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <span class="category-icon">🛡️</span>
+            <h3 class="category-title" data-i18n="skills.cat_cyber">Cyber Security & Networks</h3>
+          </div>
+          <div class="skill-meter-group">
+            <div class="skill-meter-item">
+              <div class="skill-meter-info">
+                <span>IP Protocols & Vulnerability Analysis</span>
+                <span class="skill-pct">92%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-bar" style="width: 92%;"></div>
+              </div>
+            </div>
+            <div class="skill-meter-item">
+              <div class="skill-meter-info">
+                <span>Network Security & Packet Inspection</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-bar" style="width: 88%;"></div>
+              </div>
+            </div>
+            <div class="skill-meter-item">
+              <div class="skill-meter-info">
+                <span>CTF Competitions & Ethical Hacking</span>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-bar" style="width: 85%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Backend & Programming -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <span class="category-icon">⚙️</span>
+            <h3 class="category-title" data-i18n="skills.cat_backend">Backend & Programming</h3>
+          </div>
+          <div class="skill-meter-group">
+            <div class="skill-meter-item">
+              <div class="skill-meter-info">
+                <span>C# & Backend REST API Development</span>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-bar" style="width: 90%;"></div>
+              </div>
+            </div>
+            <div class="skill-meter-item">
+              <div class="skill-meter-info">
+                <span>C / C++ & Problem Solving</span>
+                <span class="skill-pct">86%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-bar" style="width: 86%;"></div>
+              </div>
+            </div>
+            <div class="skill-meter-item">
+              <div class="skill-meter-info">
+                <span>Python & SQL Databases</span>
+                <span class="skill-pct">84%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-bar" style="width: 84%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Web & Frontend -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <span class="category-icon">💻</span>
+            <h3 class="category-title" data-i18n="skills.cat_web">Web Development</h3>
+          </div>
+          <div class="skill-meter-group">
+            <div class="skill-meter-item">
+              <div class="skill-meter-info">
+                <span>HTML5, CSS3 & Responsive UI</span>
+                <span class="skill-pct">92%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-bar" style="width: 92%;"></div>
+              </div>
+            </div>
+            <div class="skill-meter-item">
+              <div class="skill-meter-info">
+                <span>JavaScript (ES6+) & DOM</span>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-bar" style="width: 85%;"></div>
+              </div>
+            </div>
+            <div class="skill-meter-item">
+              <div class="skill-meter-info">
+                <span>Modern Glassmorphism & UI Design</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-bar" style="width: 88%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: AI & Emerging Tech -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <span class="category-icon">🤖</span>
+            <h3 class="category-title" data-i18n="skills.cat_ai">AI & Robotics</h3>
+          </div>
+          <div class="skill-meter-group">
+            <div class="skill-meter-item">
+              <div class="skill-meter-info">
+                <span>Anthropic Claude Suite & AI Fluency</span>
+                <span class="skill-pct">94%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-bar" style="width: 94%;"></div>
+              </div>
+            </div>
+            <div class="skill-meter-item">
+              <div class="skill-meter-info">
+                <span>AI-Assisted Security Tools</span>
+                <span class="skill-pct">87%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-bar" style="width: 87%;"></div>
+              </div>
+            </div>
+            <div class="skill-meter-item">
+              <div class="skill-meter-info">
+                <span>Robotics & Autonomous Systems</span>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-bar" style="width: 80%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Tech Badges -->
+      <ul class="skills-list" style="margin-top: 24px;">
+        <li data-i18n="skills.c">C</li>
+        <li data-i18n="skills.cpp">C++</li>
+        <li data-i18n="skills.csharp">C#</li>
+        <li data-i18n="skills.python">Python</li>
+        <li data-i18n="skills.java">Java</li>
+        <li data-i18n="skills.js">JavaScript</li>
+        <li data-i18n="skills.sql">SQL</li>
+        <li data-i18n="skills.html">HTML & CSS</li>
+        <li data-i18n="skills.backend">Backend API Development</li>
+        <li data-i18n="skills.cyber">Cyber Security & IP Protocols</li>
+        <li data-i18n="skills.network">Network Security</li>
+        <li data-i18n="skills.ai_tools">AI Tools & Workflows</li>
+        <li data-i18n="skills.problem">Problem Solving</li>
+        <li data-i18n="skills.team">Team Collaboration</li>
+      </ul>
+      <p class="muted" data-i18n="skills.interest">
+        Interests: <strong>Cyber Security</strong>, <strong>Web Development</strong>, <strong>Artificial Intelligence</strong>, <strong>Robotics</strong>, and <strong>CTF Competitions</strong>.
+      </p>
+    </section>
+
+    <!-- Projects Section with Category Filters and Badges -->
+    <section id="projects" class="section glass" aria-label="Projects">
+      <h2 class="section-title" data-i18n="projects.title">Projects & Achievements</h2>
+
+      <!-- Filter Tabs -->
+      <div class="filter-group" role="tablist" aria-label="Project categories">
+        <button class="filter-btn active" data-filter="all" data-i18n="projects.filter_all">All</button>
+        <button class="filter-btn" data-filter="cyber" data-i18n="projects.filter_cyber">Cyber Security & CTF</button>
+        <button class="filter-btn" data-filter="web" data-i18n="projects.filter_web">Web & Backend</button>
+      </div>
+
+      <div class="cards" id="projectsContainer">
+        <article class="card" data-category="cyber">
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag tag-cyber">Cyber Security</span>
+              <span class="tag">Network Protocols</span>
+              <span class="tag">1st Place</span>
+            </div>
+            <h3 class="card-title" data-i18n="projects.card1.title">1st Place Winner — IP Protocol Cyber Security Challenge</h3>
+            <p class="card-text" data-i18n="projects.card1.text">
+              Ranked 1st place in an IP Protocol Cyber Security competition. Demonstrated deep knowledge of network protocols and vulnerability analysis.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" data-category="web">
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag tag-web">C#</span>
+              <span class="tag">REST API</span>
+              <span class="tag">Internship</span>
+            </div>
+            <h3 class="card-title" data-i18n="projects.card2.title">Project Management System (C# | REST API)</h3>
+            <p class="card-text" data-i18n="projects.card2.text">
+              Built during my Corelease summer internship. Developed the backend REST API in C# and integrated it with the frontend.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" data-category="web">
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag tag-web">JavaScript</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">Web App</span>
+            </div>
+            <h3 class="card-title" data-i18n="projects.card3.title">QR Code Generator Website</h3>
+            <p class="card-text" data-i18n="projects.card3.text">
+              Built a fully functional QR code generator web application using HTML, CSS, and JavaScript. <br><a href="https://ahmeds34.github.io/Scanme-QR-code-generator/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600;">Live Demo ↗</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="card" data-category="web">
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag tag-web">Frontend</span>
+              <span class="tag">UI/UX</span>
+              <span class="tag">Responsive</span>
+            </div>
+            <h3 class="card-title" data-i18n="projects.card4.title">Personal Portfolio Website</h3>
+            <p class="card-text" data-i18n="projects.card4.text">
+              Designed and deployed a responsive portfolio to showcase projects, certifications, and skills. <br><a href="https://ahmeds34.github.io/Ahmedportfolio/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600;">Live Demo ↗</a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience & Certifications -->
+    <section id="certs" class="section glass" aria-label="Certifications">
+      <h2 class="section-title" data-i18n="certs.title">Experience & Certifications</h2>
+      <ul class="cert-list">
+        <li data-i18n="certs.corelease">IT Internship: Project Management System — Corelease (Smart Village)</li>
+        <li data-i18n="certs.encrypt_intern">Front-End Web Development Internship — Encrypt Core</li>
+        <li data-i18n="certs.anthropic">AI Certifications (Claude 101, AI Fluency, Claude Code in Action) — Anthropic</li>
+        <li data-i18n="certs.cyber_quantum">Cyber Security & Quantum AI Training — Encrypt Core & Quantum AI</li>
+        <li data-i18n="certs.bridge_club">Operations Team Member (2 Years) — Student Bridge Club (AAST)</li>
+      </ul>
+
+      <div class="cert-gallery">
+        <figure class="cert-card cert-interactive" id="openCertModal" role="button" tabindex="0" aria-label="View Certificate in full screen">
+          <div class="cert-img-wrapper">
+            <img
+              src="CTF competion AAST .jpg"
+              alt="Capture the Flag Competition certificate — First Place"
+              loading="lazy"
+            />
+            <div class="cert-overlay">
+              <span class="cert-zoom-icon" aria-hidden="true">🔍</span>
+              <span data-i18n="certs.view_fullscreen">Click to View Full Size</span>
+            </div>
+          </div>
+          <figcaption class="cert-caption" data-i18n="certs.ctf_caption">Capture the Flag Competition — First Place</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="courses" class="section glass" aria-label="Courses">
+      <h2 class="section-title" data-i18n="courses.title">Courses</h2>
+      <ul class="cert-list">
+        <li data-i18n="courses.anthropic">Anthropic AI Suite (Claude 101, AI Fluency Framework, Claude Code in Action)</li>
+        <li data-i18n="courses.cybersec">Cyber Security, Network Security, Ethical Hacking & Encryption</li>
+        <li data-i18n="courses.webdev">Web Development & Backend API Development (C# REST API)</li>
+        <li data-i18n="courses.quantum">AI-Assisted Security Tools — Quantum AI</li>
+      </ul>
+    </section>
+
+    <section id="languages" class="section glass" aria-label="Languages">
+      <h2 class="section-title" data-i18n="languages.title">Languages</h2>
+      <ul class="lang-list">
+        <li data-i18n="languages.ar">Arabic (Native)</li>
+        <li data-i18n="languages.en">English (B2 Level – Upper Intermediate)</li>
+      </ul>
+    </section>
+
+    <!-- Interactive Contact Section with Form & Quick Copy -->
+    <section id="contact" class="section glass" aria-label="Contact">
+      <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+      
+      <div class="contact-layout">
+        <!-- Interactive Form -->
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="contactName" data-i18n="contact.form_name">Your Name</label>
+            <input type="text" id="contactName" name="name" required placeholder="e.g. John Doe" data-i18n-placeholder="contact.placeholder_name" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail" data-i18n="contact.form_email">Your Email</label>
+            <input type="email" id="contactEmail" name="email" required placeholder="e.g. john@example.com" data-i18n-placeholder="contact.placeholder_email" />
+          </div>
+          <div class="form-group">
+            <label for="contactSubject" data-i18n="contact.form_subject">Subject</label>
+            <input type="text" id="contactSubject" name="subject" required placeholder="e.g. Collaboration Opportunity" data-i18n-placeholder="contact.placeholder_subject" />
+          </div>
+          <div class="form-group">
+            <label for="contactMessage" data-i18n="contact.form_message">Message</label>
+            <textarea id="contactMessage" name="message" rows="4" required placeholder="Write your message here..." data-i18n-placeholder="contact.placeholder_message"></textarea>
+          </div>
+          <button type="submit" class="btn primary btn-submit" data-i18n="contact.form_send">Send Message</button>
+          <div id="formStatus" class="form-status" aria-live="polite"></div>
+        </form>
+
+        <!-- Direct Contact Info with 1-Click Copy -->
+        <div class="contact-grid">
+          <div class="contact-item copyable" data-copy="01068773080" role="button" tabindex="0" title="Click to copy phone number">
+            <span aria-hidden="true">📞</span>
+            <div class="contact-text-wrap">
+              <span class="contact-val" data-i18n="contact.phone">01068773080</span>
+              <span class="copy-hint" data-i18n="contact.copy_hint">Click to copy</span>
+            </div>
+            <span class="copy-icon" aria-hidden="true">📋</span>
+          </div>
+
+          <div class="contact-item copyable" data-copy="ahmedsameh9034@gmail.com" role="button" tabindex="0" title="Click to copy email address">
+            <span aria-hidden="true">✉️</span>
+            <div class="contact-text-wrap">
+              <span class="contact-val" data-i18n="contact.email">ahmedsameh9034@gmail.com</span>
+              <span class="copy-hint" data-i18n="contact.copy_hint">Click to copy</span>
+            </div>
+            <span class="copy-icon" aria-hidden="true">📋</span>
+          </div>
+
+          <div class="contact-item">
+            <span aria-hidden="true">📍</span>
+            <span data-i18n="contact.location">AAST – Smart Village, Giza, Egypt</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p id="rights" data-i18n="footer.rights">
+        © <span id="year"></span> Ahmed Sameh AbdelGelil. All rights reserved.
+      </p>
+    </footer>
+
+    <!-- Certificate Lightbox Modal -->
+    <div id="certModal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Certificate Image Viewer" hidden>
+      <div class="lightbox-backdrop" id="certModalBackdrop"></div>
+      <div class="lightbox-content glass">
+        <button class="lightbox-close" id="closeCertModal" aria-label="Close certificate viewer">&times;</button>
+        <img id="lightboxImg" src="CTF competion AAST .jpg" alt="Capture the Flag Competition certificate — First Place" />
+        <p class="lightbox-caption" data-i18n="certs.ctf_caption">Capture the Flag Competition — First Place</p>
+      </div>
+    </div>
+
+    <!-- Interactive Hacker / Cyber Terminal Modal -->
+    <div id="terminalModal" class="terminal-modal" role="dialog" aria-modal="true" aria-label="Cyber Security Interactive Shell" hidden>
+      <div class="terminal-backdrop" id="terminalBackdrop"></div>
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot dot-red" id="terminalCloseDot"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+          </div>
+          <span class="terminal-title">ahmed@portfolio: ~/cyber-shell (bash)</span>
+          <button class="terminal-close-btn" id="closeTerminalBtn" aria-label="Close Terminal">&times;</button>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <div class="terminal-welcome">
+            <p><span class="highlight-cyan">Welcome to Ahmed Sameh's Interactive Cyber Shell!</span></p>
+            <p class="terminal-hint" data-i18n="terminal.hint">Type <span class="cmd-badge">help</span> to see available commands or try <span class="cmd-badge">whoami</span>, <span class="cmd-badge">skills</span>, <span class="cmd-badge">projects</span>, <span class="cmd-badge">ctf</span>, <span class="cmd-badge">cat flag.txt</span>, <span class="cmd-badge">contact</span>, <span class="cmd-badge">clear</span>.</p>
+          </div>
+          <div id="terminalHistory"></div>
+          <div class="terminal-prompt-line">
+            <span class="terminal-prompt">visitor@ahmed-sameh:~$</span>
+            <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal input" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- "Ask Ahmed AI" Assistant Floating Widget -->
+    <div class="ai-widget-wrapper">
+      <button id="aiWidgetToggle" class="ai-widget-btn glass" aria-label="Open AI Assistant" title="Ask Ahmed AI">
+        <span class="ai-btn-icon" aria-hidden="true">🤖</span>
+        <span class="ai-btn-label" data-i18n="ai.btn_label">Ask Ahmed AI</span>
+        <span class="ai-pulse-dot" aria-hidden="true"></span>
+      </button>
+
+      <div id="aiChatWindow" class="ai-chat-window glass" role="dialog" aria-label="Ahmed AI Assistant" hidden>
+        <div class="ai-chat-header">
+          <div class="ai-header-info">
+            <span class="ai-avatar">🤖</span>
+            <div>
+              <h4 class="ai-name" data-i18n="ai.title">Ahmed AI Assistant</h4>
+              <span class="ai-status" data-i18n="ai.status">Online · Ready to assist</span>
+            </div>
+          </div>
+          <button id="closeAiChat" class="ai-close-btn" aria-label="Close AI Assistant">&times;</button>
+        </div>
+
+        <div class="ai-chat-messages" id="aiChatMessages">
+          <div class="ai-msg bot">
+            <p data-i18n="ai.welcome">Hello! I'm Ahmed's AI assistant. Ask me anything about his technical skills, CTF achievements, C# backend projects, or internships!</p>
+          </div>
+        </div>
+
+        <!-- Quick Prompt Chips -->
+        <div class="ai-chips" id="aiChips">
+          <button class="ai-chip" data-query="ctf" data-i18n="ai.chip_ctf">🏆 1st Place CTF Win</button>
+          <button class="ai-chip" data-query="skills" data-i18n="ai.chip_skills">💻 Tech Stack</button>
+          <button class="ai-chip" data-query="internships" data-i18n="ai.chip_interns">💼 Internships</button>
+          <button class="ai-chip" data-query="contact" data-i18n="ai.chip_contact">✉️ Contact Info</button>
+        </div>
+
+        <form class="ai-input-form" id="aiInputForm">
+          <input type="text" id="aiUserInput" placeholder="Ask a question about Ahmed..." autocomplete="off" data-i18n-placeholder="ai.placeholder" />
+          <button type="submit" class="ai-send-btn" aria-label="Send message">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Floating Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn glass" aria-label="Scroll to top" title="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </button>
+
+    <script src="app.js"></script>
+  </body>
+</html>
